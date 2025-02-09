@@ -14,7 +14,7 @@ export function FooterOrder() {
           </p>
         </div>
         <div className="mt-4">
-          <p className="font-medium text-gray-800">
+          <p className="font-medium text-black">
             <strong className="font-semibold">$1</strong>
             <br />
             <strong className="font-semibold">$2</strong>
@@ -29,7 +29,7 @@ export function FooterOrder() {
           <strong className="font-semibold">Total:</strong>
         </p>
         <br />
-        <p className="font-medium text-gray-800">
+        <p className="font-medium text-black">
           <strong className="font-semibold">$4</strong>
         </p>
       </div>

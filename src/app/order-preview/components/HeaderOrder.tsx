@@ -2,7 +2,7 @@
 
 export function HeaderOrder() {
   return (
-    <div className="flex flex-col md:flex-row gap-6 bg-zinc-100 m-5 p-5 justify-between rounded-md ">
+    <div className="flex flex-col md:flex-row gap-6 bg-zinc-100 m-5 p-5 justify-between rounded-md break-words">
       <div className="w-full md:w-1/2">
         <div>
           <h2 className="text-xl text-black font-semibold">
