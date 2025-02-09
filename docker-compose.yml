@@ -1,0 +1,14 @@
+services:
+  app:
+    container_name: ${PROJECT_NAME}-app
+    restart: "unless-stopped"
+    build:
+      context: ./
+      target: ${STAGE}
+      dockerfile: Dockerfile
+    volumes:
+      - .:/app
+      - /app/node_modules
+      - /app/.next
+    ports:
+      - ${APP_PORT}:3000
