@@ -26,6 +26,8 @@ export function HeaderOrder() {
         <div className="mt-4">
           <p className="font-medium text-gray-800">
             <strong className="font-semibold">Fecha:</strong> 09/02/2025
+            <br />
+            <strong className="font-semibold">Estado:</strong> Por Pagar
           </p>
         </div>
       </div>
