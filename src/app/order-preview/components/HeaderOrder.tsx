@@ -9,15 +9,6 @@ export function HeaderOrder() {
             Pay Beer Simplified
           </h2>
         </div>
-        <div className="mt-4">
-          <p className="text-gray-800 font-medium">
-            <strong className="font-semibold">Dirección:</strong> Lorem ipsum
-            dolor sit amet consectetur adipisicing elit. Aperiam sit fugiat
-            deserunt, libero nostrum quos obcaecati laudantium neque, corrupti
-            sed sapiente nobis alias nam aut aspernatur enim, necessitatibus
-            voluptate minus.
-          </p>
-        </div>
       </div>
       <div className="w-full md:w-1/2 md:text-right">
         <div>

@@ -8,8 +8,9 @@ export function FooterOrder() {
           <p className="font-medium text-gray-800">
             <strong className="font-semibold">Subtotal:</strong>
             <br />
-            <strong className="font-semibold">Impuesto:</strong>
+            <strong className="font-semibold">Descuento (0%):</strong>
             <br />
+            <strong className="font-semibold">Impuesto (1%):</strong>
           </p>
         </div>
         <div className="mt-4">
@@ -17,6 +18,8 @@ export function FooterOrder() {
             <strong className="font-semibold">$1</strong>
             <br />
             <strong className="font-semibold">$2</strong>
+            <br />
+            <strong className="font-semibold">$3</strong>
           </p>
         </div>
       </div>
@@ -27,7 +30,7 @@ export function FooterOrder() {
         </p>
         <br />
         <p className="font-medium text-gray-800">
-          <strong className="font-semibold">$3</strong>
+          <strong className="font-semibold">$4</strong>
         </p>
       </div>
     </div>
