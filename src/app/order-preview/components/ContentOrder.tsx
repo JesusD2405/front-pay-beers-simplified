@@ -1,7 +1,10 @@
 import React from "react";
 
+// Core
+import { ItemModel } from "@/core/item/item.model";
+
 interface ContentOrderProps {
-  items?: any[];
+  items?: ItemModel[];
 }
 
 const ContentOrder: React.FC<ContentOrderProps> = ({ items }) => {
@@ -18,14 +21,14 @@ const ContentOrder: React.FC<ContentOrderProps> = ({ items }) => {
             </tr>
           </thead>
           <tbody>
-            {items.map((data: any, index: number) => (
+            {items.map((data: ItemModel, index: number) => (
               <tr key={`item-${index}`} className="text-black">
                 <td className="px-4 py-2 border-b">{data.name}</td>
                 <td className="px-4 py-2 border-b text-center">
                   $ {data.pricePerUnit}
                 </td>
                 <td className="px-4 py-2 border-b text-center">
-                  {data.quantity}
+                  {data.total / data.pricePerUnit}
                 </td>
                 <td className="px-4 py-2 border-b text-center font-semibold">
                   $ {data.total}
