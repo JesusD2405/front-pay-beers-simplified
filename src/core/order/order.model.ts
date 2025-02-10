@@ -1,10 +1,12 @@
+import { ItemModel } from "../item/item.model";
+
 export class OrderModel {
   created: Date;
   paid: boolean;
   subtotal: number;
   taxes: number;
   discounts: number;
-  items: any[];
+  items: ItemModel[];
   rounds: any[];
 
   constructor(
@@ -13,7 +15,7 @@ export class OrderModel {
     subtotal: number,
     taxes: number,
     discounts: number,
-    items: any[],
+    items: ItemModel[],
     rounds: any[]
   ) {
     this.created = created;
