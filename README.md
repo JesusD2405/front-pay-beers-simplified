@@ -1,36 +1,72 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Pagar Cervezas Simplificado
 
-## Getting Started
+_Proyecto en Next.js v14 bajo Typescript, que contiene el desarrollo de un front para la gestión pagos de cervezas._
 
-First, run the development server:
+## Comenzando 🚀
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
+_Estas instrucciones te permitirán obtener una copia del proyecto en funcionamiento en tu máquina local para propósitos de desarrollo, pruebas o despliegue en producción._
+
+Mira **Deployment** para conocer como desplegar el proyecto.
+
+### Pre-requisitos 📋
+
+1. [Docker](https://docs.docker.com/)
+
+_Es importante tener instaladas las herramientas anteriormente mencionadas para iniciar los siguientes pasos._
+
+## Instalación 🔧
+
+_*** Preparando nuestras variables de entorno ***_
+
+_Nos situamos en la raíz y hacemos una copia del archivo .env.example de esta manera tendriamos nuestro archivo de variables global_
+
+```
+ cp .env.example .env
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+_En nuestro nuevo archivo .env modificamos y adaptamos las variables de entorno de la App (Para fines de prueba de integración con la [Api-Pay-Beers-Simplified](https://github.com/JesusD2405/api-pay-beers-simplified) no hace falta adaptar ninguna variable de entorno basta con solo copiar)_
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+_Finalmente, en la raíz del proyecto ejecutamos_
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+```
+ docker compose up --build
+```
 
-## Learn More
+_De esta manera tendríamos nuestro contenedor levantado._
 
-To learn more about Next.js, take a look at the following resources:
+## Probando Rutas 🧪
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+_Por Definir..._
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+## Despliegue 📦
 
-## Deploy on Vercel
+_Nos situamos en el directorio raiz y hacemos una copia del archivo docker-env.dist reemplazando la extensión del archivo por el nombre del ambiente a desplegar:_
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+1. dev (Desarrollo).
+2. prod (Producción).
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+```
+ cp docker-env.dist docker-env.ambiente
+```
+
+_En nuestro nuevo archivo docker-env.ambiente modificamos y adaptamos las variables de entorno del Docker_
+
+_Finalmente, en la raíz del proyecto ejecutamos_
+
+```
+ docker compose --env-file=./docker-env.ambiente up --build
+```
+
+## Construido con 🛠️
+
+_Herramientas utilizadas en el proyecto:_
+
+- [Docker](https://docs.docker.com/compose/install/) - Es una tecnología de contenedorización de código abierto para crear y contener sus aplicaciones.
+- [Next.js v15](https://nextjs.org/docs) - Utilizado por algunas de las empresas más grandes del mundo, Next.js le permite crear aplicaciones web de alta calidad con el poder de los componentes React.
+- [Typescript](https://www.typescriptlang.org/docs/) - TypeScript es un lenguaje de programación fuertemente tipado que se basa en JavaScript, lo que le brinda mejores herramientas a cualquier escala.
+- [Talwind.css](https://tailwindcss.com/docs/) - Tailwind CSS funciona escaneando todos sus archivos HTML, componentes JavaScript y cualquier otra plantilla en busca de nombres de clase, generando los estilos correspondientes y luego escribiéndolos en un archivo CSS estático. Es rápido, flexible y confiable, con tiempo de ejecución cero.
+- [Axios](https://axios-http.com/es/docs/intro) - Cliente HTTP simple basado en promesas para el navegador y node.js.
+
+---
+
+Desarrollado por [Jesús David Pérez](https://github.com/JesusD2405/) ❤️🚀
