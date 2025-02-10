@@ -1,6 +1,20 @@
-"use client";
+import React from "react";
 
-export function FooterOrder() {
+interface FooterOrderProps {
+  subtotal?: number;
+  discounts?: number;
+  taxes?: number;
+}
+
+const FooterOrder: React.FC<FooterOrderProps> = ({
+  subtotal = 0,
+  discounts = 0,
+  taxes = 0,
+}) => {
+  const total_discount = discounts > 0 ? subtotal * discounts : 0;
+  const total_taxes = subtotal * taxes;
+  const total = subtotal - total_discount - total_taxes;
+
   return (
     <div className="m-5">
       <div className="flex flex-wrap gap-6 justify-end">
@@ -8,18 +22,26 @@ export function FooterOrder() {
           <p className="font-medium text-gray-800">
             <strong className="font-semibold">Subtotal:</strong>
             <br />
-            <strong className="font-semibold">Descuento (0%):</strong>
+            <strong className="font-semibold">
+              Descuento ({discounts * 100}%):
+            </strong>
             <br />
-            <strong className="font-semibold">Impuesto (1%):</strong>
+            <strong className="font-semibold">
+              Impuesto ({taxes * 100}%):
+            </strong>
           </p>
         </div>
         <div className="mt-4">
           <p className="font-medium text-black">
-            <strong className="font-semibold">$1</strong>
+            <strong className="font-semibold">${subtotal}</strong>
             <br />
-            <strong className="font-semibold">$2</strong>
+            <strong className="font-semibold">
+              {total_discount > 0 ? `-$${total_discount}` : `$0`}
+            </strong>
             <br />
-            <strong className="font-semibold">$3</strong>
+            <strong className="font-semibold">
+              {total_taxes > 0 ? `-$${total_taxes}` : `$0`}
+            </strong>
           </p>
         </div>
       </div>
@@ -30,9 +52,11 @@ export function FooterOrder() {
         </p>
         <br />
         <p className="font-medium text-black">
-          <strong className="font-semibold">$4</strong>
+          <strong className="font-semibold">${total}</strong>
         </p>
       </div>
     </div>
   );
-}
+};
+
+export default FooterOrder;

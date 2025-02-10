@@ -1,6 +1,11 @@
-"use client";
+import React from "react";
 
-export function HeaderOrder() {
+interface HeaderOrderProps {
+  created?: Date;
+  paid?: boolean;
+}
+
+const HeaderOrder: React.FC<HeaderOrderProps> = ({ created, paid }) => {
   return (
     <div className="flex flex-col md:flex-row gap-6 bg-zinc-100 m-5 p-5 justify-between rounded-md break-words">
       <div className="w-full md:w-1/2">
@@ -16,12 +21,16 @@ export function HeaderOrder() {
         </div>
         <div className="mt-4">
           <p className="font-medium text-gray-800">
-            <strong className="font-semibold">Fecha:</strong> 09/02/2025
+            <strong className="font-semibold">Fecha:</strong>{" "}
+            {created?.toString()}
             <br />
-            <strong className="font-semibold">Estado:</strong> Por Pagar
+            <strong className="font-semibold">Estado:</strong>{" "}
+            {paid ? "PAGADO" : "POR PAGAR"}
           </p>
         </div>
       </div>
     </div>
   );
-}
+};
+
+export default HeaderOrder;
